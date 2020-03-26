@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 1023662980}
   m_Layer: 0
   m_Name: Myra (2)
-  m_TagString: Untagged
+  m_TagString: Ant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,6 +237,7 @@ MonoBehaviour:
   hover: {fileID: 3776087670673283011, guid: 1781622af42c9cb4e9cc487b13d673a2, type: 3}
   selected: {fileID: -5493207388523664891, guid: 1781622af42c9cb4e9cc487b13d673a2,
     type: 3}
+  isHover: 0
   isSelect: 0
   selector: {fileID: 1334279172}
 --- !u!212 &1023662981
@@ -441,7 +442,7 @@ GameObject:
   - component: {fileID: 1457891091}
   m_Layer: 0
   m_Name: Myra (1)
-  m_TagString: Untagged
+  m_TagString: Ant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -462,6 +463,7 @@ MonoBehaviour:
   hover: {fileID: 3776087670673283011, guid: 1781622af42c9cb4e9cc487b13d673a2, type: 3}
   selected: {fileID: -5493207388523664891, guid: 1781622af42c9cb4e9cc487b13d673a2,
     type: 3}
+  isHover: 0
   isSelect: 0
   selector: {fileID: 1334279172}
 --- !u!212 &1457891092
@@ -540,7 +542,7 @@ GameObject:
   - component: {fileID: 1723350674}
   m_Layer: 0
   m_Name: Myra
-  m_TagString: Untagged
+  m_TagString: Ant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -624,5 +626,6 @@ MonoBehaviour:
   hover: {fileID: 3776087670673283011, guid: 1781622af42c9cb4e9cc487b13d673a2, type: 3}
   selected: {fileID: -5493207388523664891, guid: 1781622af42c9cb4e9cc487b13d673a2,
     type: 3}
+  isHover: 0
   isSelect: 0
   selector: {fileID: 1334279172}

@@ -8,11 +8,14 @@ public class AntBase : MonoBehaviour
     public Sprite idle;
     public Sprite hover;
     public Sprite selected;
-    bool isHover;
+    public bool isHover;
     public bool isSelect;
     Queue<Action> actions;
     SpriteRenderer spriteRender;
     public GameObject selector;
+
+    public Vector3 destination;
+    private Vector3[] wayPoints;
 
     // Start is called before the first frame update
     void Start()
@@ -47,5 +50,7 @@ public class AntBase : MonoBehaviour
         {
             spriteRender.sprite = idle;
         }
+
+
     }
 }
