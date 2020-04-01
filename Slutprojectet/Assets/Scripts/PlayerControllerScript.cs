@@ -49,19 +49,19 @@ public class PlayerControllerScript : MonoBehaviour
                     {
                         selectedAnts[selectCheckLoopCount].GetComponent<AntBase>().isSelect = true;
                         selectCheckLoopCount += 1;
-                        Debug.Log("Ant added");
+                        //Debug.Log("Ant added");
                     } 
                    else
                     {
                         selectedAnts[selectCheckLoopCount].GetComponent<AntBase>().isSelect = false;
                         selectedAnts.RemoveAt(selectCheckLoopCount);
-                        Debug.Log("Ant removed");
+                        //Debug.Log("Ant removed");
                     }
                 }
                 catch 
                 {
                     selectCheckLoopBool = false;
-                    Debug.Log("Loop Concluded");
+                    //Debug.Log("Loop Concluded");
                 }
             }
 
@@ -78,7 +78,7 @@ public class PlayerControllerScript : MonoBehaviour
                 destination.x += Mathf.Sin(3.14f * (i + 0.5f)) * i * 0.3f;
                 destination.y += Mathf.Sin(3.14f * (i + 1.5f)) * i * 0.3f;
 
-                selectedAnts[i].GetComponent<AntBase>().destination = destination;
+                selectedAnts[i].GetComponent<AntBase>().Destination = destination;
             }
         }
 
