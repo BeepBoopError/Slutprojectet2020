@@ -7,6 +7,7 @@ public class PlayerControllerScript : MonoBehaviour
     private Vector3 startOfSelectMousePos;
     public List<GameObject> selectedAnts;
     public GameObject selectorRectangle;
+    
 
 
     // Start is called before the first frame update
@@ -66,17 +67,18 @@ public class PlayerControllerScript : MonoBehaviour
             }
 
             selectorRectangle.transform.localScale = new Vector3(0f,0f,0f);
+            Debug.Log(selectedAnts.Count);
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            //https://www.desmos.com/calculator/rynbrft4ku mathformulas behind this, it isn't prefect, but the best I could come up with in 5 minutes
             for (int i = 0; i < selectedAnts.Count; i++)
             {
                 Vector3 destination = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-                destination.x += Mathf.Sin(3.14f * (i + 0.5f)) * i * 0.3f;
-                destination.y += Mathf.Sin(3.14f * (i + 1.5f)) * i * 0.3f;
+                float randomRange = 0.1f * selectedAnts.Count;
+                destination.x += Random.Range( -randomRange, randomRange);
+                destination.y += Random.Range( -randomRange, randomRange);
+                destination.z = 0;
 
                 selectedAnts[i].GetComponent<AntBase>().Destination = destination;
             }

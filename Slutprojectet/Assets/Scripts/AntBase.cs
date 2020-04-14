@@ -22,17 +22,17 @@ public class AntBase : MonoBehaviour
     private Vector3[] wayPoints;
 
     protected int maxHealth;
-    protected float speed = 1;
+    protected float speed = 5f;
     protected int maxStamina;
 
     private int health;
-    public int Health
+    protected int Health
     {
         get { return health; }
         set { health = value; }
     }
     private int stamina;
-    public int Stamina
+    protected int Stamina
     {
         get { return stamina; }
         set { stamina = value; }
@@ -47,6 +47,7 @@ public class AntBase : MonoBehaviour
     void Start()
     {
         spriteRender = GetComponent<SpriteRenderer>();
+        Destination = transform.position;
     }
 
     // Update is called once per frame
@@ -79,13 +80,14 @@ public class AntBase : MonoBehaviour
 
         if (transform.position != Destination)
         {
-            if (Mathf.Sqrt(Mathf.Pow(transform.position.x - Destination.x, 2) + Mathf.Pow(transform.position.y - Destination.y, 2)) > speed * Time.deltaTime)
+            if (Mathf.Sqrt(Mathf.Pow(transform.position.x - Destination.x, 2) + Mathf.Pow(transform.position.y - Destination.y, 2)) < speed * Time.deltaTime)
             {
                 transform.position = Destination;
             }
             else
             {
-                transform.position = new Vector3 ( speed * Time.deltaTime * Mathf.Cos((Destination.x - transform.position.x) / Mathf.Sqrt(Mathf.Pow(transform.position.x - Destination.x, 2) + Mathf.Pow(transform.position.y - Destination.y, 2))), speed * Time.deltaTime * Mathf.Sin((Destination.y - transform.position.y ) / Mathf.Sqrt(Mathf.Pow(transform.position.x - Destination.x, 2) + Mathf.Pow(transform.position.y - Destination.y, 2))), 0) ;
+
+                transform.Translate(-speed*Time.deltaTime*((transform.position.x-Destination.x)/ Mathf.Sqrt(Mathf.Pow(transform.position.x - Destination.x, 2) + Mathf.Pow(transform.position.y - Destination.y, 2))), -speed * Time.deltaTime * ((transform.position.y - Destination.y) / Mathf.Sqrt(Mathf.Pow(transform.position.x - Destination.x, 2) + Mathf.Pow(transform.position.y - Destination.y, 2))), 0,Space.World);
 
             }
         }
